@@ -1,0 +1,155 @@
+<!--<!doctype html>
+<html>
+<head>
+<title>Another Basic Page</title>
+</head>
+<body>
+<h1>Here’s another basic page</h1>
+
+<script type="text/javascript">
+ alert("hello");
+</script>
+
+</body>
+</html>-->
+
+
+
+
+<!--<html>
+<head>
+<title>JavaScript Chapter 2</title>
+</head>
+<body>
+<h1>Here’s another basic page</h1>
+<script type="text/javascript">
+ var myVariable = 4;
+ alert(myVariable);
+</script>
+</body>
+</html>-->
+
+
+
+<!--<!doctype html>
+<html>
+<head>
+<title>JavaScript Chapter 2</title>
+</head>
+<body>
+<h1>Here’s another basic page</h1>
+<script type="text/javascript">
+ var myString = "Partly" + "Cloudy";
+ alert(myString);
+</script>
+</body>
+</html>-->
+
+
+
+
+<!--<!doctype html>
+<html>
+<head>
+<title>JavaScript Chapter 2</title>
+198 Testing Things with Conditionals
+</head>
+
+<body>
+<h1>Here’s another basic page</h1>
+
+
+<script type="text/javascript">
+ var temperature = 12 ;
+ var weather = "hot";
+    if (temperature > 75) {
+    alert("It’s too hot to mow");
+    } else if (weather == "raining") {
+    alert("It’s raining, can’t mow");
+    } else {
+    alert("Gotta mow");
+    }
+</script>
+
+
+</body>
+</html>-->
+
+
+
+
+<!--<!doctype html>
+<html>
+<head>
+<title>jQuery</title>
+<script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js">
+</script>
+</head>
+<body>
+<h1>Adding HTML</h1>
+<ul id="theList">
+    <li>Here's 1</li>
+    <li>Here's 2</li>
+</ul>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#theList").append("<li>Here's 3</li>");
+    $("#theList li").each(function(){
+        var existingText = $(this).text().substr(7,1);
+        $(this).text("Item " + existingText);
+    });
+});
+</script>
+</body>
+</html>-->
+
+
+<!--<!doctype html>
+<html>
+<head>
+<title>jQuery</title>
+<script type="text/javascript"
+ src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js">
+</script>
+</head>
+<body>
+<h1>Attributes</h1>
+<a id="exLink" class="link" href="http://www.example.com">Web
+site</a>
+<script type="text/javascript">
+    $(document).ready(function() {
+     alert($("#exLink").attr("href"));
+    });
+</script>
+</body>
+</html>-->
+
+<!doctype html>
+<html>
+<head>
+<title>jQuery</title>
+<script type="text/javascript"
+ src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js">
+</script>
+</head>
+<body>
+<h1>Attributes</h1>
+<img alt="square" id="theImage" src="Image/Asus.png" />
+<script type="text/javascript">
+$(document).ready(function() {
+ $("#theImage").attr("src","Image/series3.png");
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
