@@ -1,8 +1,10 @@
-<?php  
+<?php   
 session_start();
 
     include ("server.php");
     
+    $alert = " <script> alert('Invalid Username OR Email !') </script> " ;
+      
     if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
             //something was posted
@@ -10,9 +12,8 @@ session_start();
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            if(!empty($username) &&  !empty($email) && !empty($password) && !is_numeric($username))
+            if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) )
             {
-
                     //save to database
                     $query = "insert into users (username,email,password) values ('$username','$email','$password')";
 
@@ -22,8 +23,8 @@ session_start();
                     die;
             }else
             {
-                    echo ( "Please enter some valid information!");
-            }
+                    echo $alert;
+            }           
 	}
 
 ?>
@@ -143,13 +144,8 @@ a {
     <input type="password" placeholder="Enter Password"  name="password" required>
     <br>
     
-<!--    <label for="password"><b>Confirm Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password_2" required>-->
-
     <hr>
-    <p>  
-    </p>
-
+    
     <button type="submit" class="registerbtn" name="reg_user">Register</button>
   </div>
   

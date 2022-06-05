@@ -5,6 +5,7 @@
   <title>Online Electronic Sales (OES)</title>
   <link rel="stylesheet" href="Bootstrap/header.css">
   <link rel="stylesheet" href="Bootstrap/mystyle.css">
+  
 </head>
 
 
@@ -23,8 +24,8 @@
     <img src="Image/ZClogo.png"  width="45" height="40" alt="logo" style="margin-left: 1%;" >
     <a href="index.php">Home</a>
     <a href="cart.php">Cart</a>
-    <a href="#contact">Support</a>
-    <a href="#about">About</a>
+    <a href="support.php">Support</a>
+    <a href="about.php">About</a>
     <a href ="login.php">Account</a>
     <div class="search-container">
         <form action="/action_page.php">

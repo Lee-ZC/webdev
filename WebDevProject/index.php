@@ -153,10 +153,6 @@ p.ex1 {
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
 
-<!-- Live Chat -->
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-07109f64-bd8a-42b9-9a21-ca7b0d6af95d"></div>
-
 
 
 
@@ -196,37 +192,6 @@ p.ex1 {
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
-
-
-
-<!--<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="Image/announcement.png" style="width:100%">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="Image/announcement.png" style="width:100%">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="Image/announcement.png" style="width:100%">
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>-->
-
-
-<!--<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>-->
 
 
 
@@ -404,33 +369,6 @@ function topFunction() {
 }
     
     
-//Anouncement
-//let slideIndex = 1;
-//showSlides(slideIndex);
-//
-//function plusSlides(n) {
-//  showSlides(slideIndex += n);
-//}
-//
-//function currentSlide(n) {
-//  showSlides(slideIndex = n);
-//}
-//
-//function showSlides(n) {
-//  let i;
-//  let slides = document.getElementsByClassName("mySlides");
-//  let dots = document.getElementsByClassName("dot");
-//  if (n > slides.length) {slideIndex = 1}    
-//  if (n < 1) {slideIndex = slides.length}
-//  for (i = 0; i < slides.length; i++) {
-//    slides[i].style.display = "none";  
-//  }
-//  for (i = 0; i < dots.length; i++) {
-//    dots[i].className = dots[i].className.replace(" active", "");
-//  }
-//  slides[slideIndex-1].style.display = "block";  
-//  dots[slideIndex-1].className += " active";
-//}
 
 
 //Filter 
