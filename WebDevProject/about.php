@@ -2,6 +2,8 @@
 <html>
 <head>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 <style>
@@ -94,6 +96,11 @@ body {
 #myBtn:hover {
   background-color: #555;
 }
+
+.row {
+    --bs-gutter-x: 1.rem;
+    }
+
 </style>
 </head>
 
@@ -125,7 +132,8 @@ body {
     
   </div>
     
-  <div class="column" style="text-align:center">
+    
+<!--  <div class="column" style="text-align:center">
     <div class="card" style="text-align:center">
         <br>
       <img src="Image/sohaicat.jpeg" alt="Mike" style="width:50%">
@@ -137,16 +145,49 @@ body {
         <p><button onclick="sweetalertclick()" class="button" style=" font-size: large;">Awsome</button></p>
       </div>
     </div>
+  </div>-->
+
+<br>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="Image/sohaicat.jpeg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Lee ZhiCheng</h5>
+        
+        <p class="card-text"><small class="text-muted">OES Website Director</small></p>
+        <br>
+        <p class="card-text">Although I am a cat but i will keep Trying To Do Better !</p>
+        <br>
+        <button type="button" class="btn btn-outline-warning" onclick="sweetalertclick()" >Awsome</button>
+      </div>
+    </div>
   </div>
-  
+</div>
+
+</div>
 
 <script>
     
     function sweetalertclick(){
-    Swal.fire(
-    'Thank You!',
-    'You are Awsome Too!',
-    'success' )
+   
+    Swal.fire({
+    title: 'You are AWSOME too ! ',
+    width: 600,
+    padding: '3em',
+    color: '#716add',
+    background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+    backdrop: `
+    rgba(0,0,123,0.4)
+    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+    left top
+    no-repeat
+      `
+    })
+
     }
     
     

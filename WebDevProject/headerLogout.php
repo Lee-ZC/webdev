@@ -73,7 +73,7 @@
 <!-- Site navigation menu -->
 <div class="scrollmenu topnav" style="text-align:left" >
     <img src="Image/ZClogo.png"  width="45" height="40" alt="logo" style="margin-left: 1%;" >
-    <a href="index.php">Home</a>
+    <a href="index2.php">Home</a>
     <a href="cart.php">Cart</a>
     <a href="#contact">Support</a>
     <a href="#about">About</a>
@@ -82,7 +82,7 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="#">Setting</a>
+          <a href="setting.php">Setting</a>
           <a href="index.php">Logout</a>
         </div>
   </div> 

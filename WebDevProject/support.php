@@ -50,8 +50,9 @@ body  {
   
     
     <p style=" margin-left: 2.5em; padding: 0 7em 2em 0;  color: green; ">
-      Click on the Live Chat button and we’ll find you the best solution      
-      <i class="fa fa-arrow-right" style= " margin-left: 20em;    color: greenyellow; " ></i>
+      Click on the Live Chat button and we’ll find you the best solution    
+      <i class="fa fa-arrow-right" style= " margin-left: 5em;    color: greenyellow; " ></i>
+      <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
       <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; "></i>
       <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
     <p>

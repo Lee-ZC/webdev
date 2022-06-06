@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-    $alert = " <script> alert('Wrong Username OR Email !') </script> " ;
+    //$alert = " <script> alert('Wrong Username OR Email !') </script> " ;
 
     include("server.php");
 	
@@ -25,17 +25,19 @@ session_start();
                                 $user_data = mysqli_fetch_assoc($result);
 
                                 if($user_data['password'] === $password)
-                                {                                        
-                                    header("Location: index.php");
+                                {                                  
+                                    $_SESSION['username'] =  $username;
+                                    //$username2= $_SESSION['username'];
+                                    header("Location: index2.php");
                                     die;
                                 }
                             }
                     }
 
-                    echo $alert;
+                    $_SESSION['Status'] = 'Invalid Username OR Email !';
             }else
             {
-                    echo $alert;
+                    $_SESSION['Status'] = 'Invalid Username OR Email !';
             }
 	}
 
@@ -50,6 +52,7 @@ session_start();
   <title>Online Electronic Sales (OES)</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 
@@ -112,8 +115,55 @@ button
     
    <!-- Site navigation menu -->
    <?php require_once ('header.php'); ?>
+   
+   <?php 
 
+    if(isset($_SESSION['Status'])){
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Username OR Email Not Found!',
+        footer: '<a href="support.php">Why do I have this issue?</a>'
+        })
+        </script>
+
+        
+   
+   <?php
+        unset($_SESSION['Status']);
+            
+    }
+    ?>
+   
+   
+    <?php 
     
+    if(isset($_SESSION['status'])){
+        
+        ?>
+<!--        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?php echo $_SESSION['status']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>-->
+
+        <script>
+        Swal.fire(
+        'Good job!',
+        'Register Account Successfully !',
+        'success'
+        )
+        </script>
+
+       
+   <?php
+        unset($_SESSION['status']);
+            
+    }
+    
+    ?>
+
     <br>
     <br>
     <center> <h1>  Login  </h1> </center>   

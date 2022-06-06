@@ -3,7 +3,8 @@ session_start();
 
     include ("server.php");
     
-    $alert = " <script> alert('Invalid Username OR Email !') </script> " ;
+//    $alert = " <script> alert('Invalid Username OR Email !') </script> " ;
+//    $result = '<div class = "alert alert-success" > Thank You! I will be in touch </div>';
       
     if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
@@ -16,14 +17,16 @@ session_start();
             {
                     //save to database
                     $query = "insert into users (username,email,password) values ('$username','$email','$password')";
-
                     mysqli_query($con, $query);
-
+                        
+                    $_SESSION['status'] = 'Register Successfully';
                     header("Location: login.php");
+                    
                     die;
             }else
             {
-                    echo $alert;
+                    //echo $alert;
+                    $_SESSION['status'] = 'Invalid Username OR Email !';
             }           
 	}
 
@@ -35,6 +38,7 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!--Icon-->
 <link rel="icon" href="Image/ZClogo.ico" /> 
@@ -122,6 +126,25 @@ a {
 <?php require_once ('header.php'); ?>
 
 <br>
+<?php 
+    
+    if(isset($_SESSION['status'])){
+        
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid Username OR Email !',
+        footer: '<a href="support.php">Why do I have this issue?</a>'
+        })
+        </script>
+   
+   <?php
+        unset($_SESSION['status']);  
+    }
+    
+    ?>
 
 <form method ="post" action="register.php">
   
