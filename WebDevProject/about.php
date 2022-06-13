@@ -71,10 +71,9 @@ html {
   }
 }
 
-/*body  {
-  background-color:  #B97A6C;
-}*/
+
 body {
+  background-color:  #B97A6C;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 #myBtn {
@@ -162,7 +161,7 @@ body {
         <br>
         <p class="card-text">Although I am a cat but i will keep Trying To Do Better !</p>
         <br>
-        <button type="button" class="btn btn-outline-warning" onclick="sweetalertclick()" >Awsome</button>
+        <button type="button" class="btn btn-outline-info" onclick="sweetalertclick()" >Awesome</button>
       </div>
     </div>
   </div>
@@ -175,7 +174,7 @@ body {
     function sweetalertclick(){
    
     Swal.fire({
-    title: 'You are AWSOME too ! ',
+    title: 'You are AWESOME too ! ',
     width: 600,
     padding: '3em',
     color: '#716add',

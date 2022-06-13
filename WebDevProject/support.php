@@ -42,21 +42,24 @@ body  {
     <br>
     <br>
     
-   <h2 style=" margin-left: 1em; " >
-    Get Support
+   <h2 style=" margin-left: 1em; color: papayawhip;  " >
+    Get Support &  Click on the Live Chat button
+    <i class="fa fa-arrow-right" style= " margin-left: 5em;    color: greenyellow; " ></i>
+    <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
+    <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; "></i>
     </h2>
     
     <br>
   
     
-    <p style=" margin-left: 2.5em; padding: 0 7em 2em 0;  color: green; ">
+<!--    <p style=" margin-left: 2.5em; padding: 0 7em 2em 0;  color: green; ">
       Click on the Live Chat button and we’ll find you the best solution    
       <i class="fa fa-arrow-right" style= " margin-left: 5em;    color: greenyellow; " ></i>
       <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
       <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; "></i>
       <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
     <p>
-    
+    -->
     
     
     <!-- Live Chat -->

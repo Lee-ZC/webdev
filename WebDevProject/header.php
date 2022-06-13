@@ -25,15 +25,28 @@
     <a href="index.php">Home</a>
     <a href="cart.php">Cart</a>
     <a href="support.php">Support</a>
+    <a href="feedback.php">Feedback</a>
     <a href="about.php">About</a>
-    <a href ="login.php">Account</a>
+    <a href ="loginV2.php">Account</a>
     <div class="search-container">
-        <form action="/action_page.php">
+        <form action="" method="post" target="_blank">
           <input type="text" placeholder="Search.." name="search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 </div>
+
+
+    <?php 
+    $search_URL ="http://www.google.com/search?q=";
+    
+    
+    if(isset($_POST['search'])) {
+        $keywords = $_POST['search'];
+        header("location: ".$search_URL.$keywords.'');
+    }
+    
+    ?>
 
 
 

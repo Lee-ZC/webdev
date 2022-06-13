@@ -1,8 +1,6 @@
 <?php 
 session_start();
 
-    //$alert = " <script> alert('Wrong Username OR Email !') </script> " ;
-
     include("server.php");
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -27,17 +25,17 @@ session_start();
                                 if($user_data['password'] === $password)
                                 {                                  
                                     $_SESSION['username'] =  $username;
-                                    //$username2= $_SESSION['username'];
                                     header("Location: index2.php");
+                                
                                     die;
                                 }
                             }
                     }
 
-                    $_SESSION['Status'] = 'Invalid Username OR Email !';
+                    $_SESSION['StatusInvalid'] = 'Invalid Username OR Email !';
             }else
             {
-                    $_SESSION['Status'] = 'Invalid Username OR Email !';
+                    $_SESSION['StatusInvalid'] = 'Invalid Username OR Email !';
             }
 	}
 
@@ -118,7 +116,7 @@ button
    
    <?php 
 
-    if(isset($_SESSION['Status'])){
+    if(isset($_SESSION['StatusInvalid'])){
         ?>
         <script>
         Swal.fire({
@@ -132,7 +130,7 @@ button
         
    
    <?php
-        unset($_SESSION['Status']);
+        unset($_SESSION['StatusInvalid']);
             
     }
     ?>
@@ -149,11 +147,13 @@ button
         </div>-->
 
         <script>
-        Swal.fire(
-        'Good job!',
-        'Register Account Successfully !',
-        'success'
-        )
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Register Successful ! ',
+        showConfirmButton: false,
+        timer: 2500
+      })
         </script>
 
        

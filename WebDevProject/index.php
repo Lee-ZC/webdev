@@ -30,7 +30,7 @@
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: orange;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -95,7 +95,8 @@
 
 
 body  {
-  background-color:  #b5b0b0;
+/*  background-color:  #b5b0b0;*/
+  background: linear-gradient(to right, #b92b27, #1565c0);
 }
 
 p.ex1 {
@@ -133,6 +134,14 @@ p.ex1 {
 #myBtn:hover {
   background-color: #555;
 }
+
+.star {
+    COLOR: RED;
+}
+
+
+
+
 </style>
 
 
@@ -172,13 +181,13 @@ p.ex1 {
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="Image/announcement.png" alt="Los Angeles" class="d-block" style="width:80%">
+      <img src="Image/announcement2.png" alt="Los Angeles" class="d-block" style="width:100%; height: 600px;">
     </div>
     <div class="carousel-item">
-      <img src="Image/announcement.png" alt="Chicago" class="d-block" style="width:80%">
+      <img src="Image/announcement1.png" alt="Chicago" class="d-block" style="width:100%; height: 600px;">
     </div>
     <div class="carousel-item">
-      <img src="Image/announcement.png" alt="New York" class="d-block" style="width:80%">
+      <img src="Image/announcement3.PNG" alt="New York" class="d-block" style="width:100%; height: 600px;">
     </div>
   </div>
   
@@ -202,8 +211,11 @@ p.ex1 {
 
 
 
+
 <center>
 <h2>Featured <b>Products</b></h2>
+ <hr width="15%" color="red"  size="5px" />
+
 </center>
 
 
@@ -223,11 +235,19 @@ p.ex1 {
       
     <div class="Phone">
         <div class="card">
-          <img src="Image/Iphoe13.jpg"  style="width:50%">
+          <img src="Image/Iphoe13.jpg"  >
           <h3>Iphone 13</h3>
-          <p>RM3899.00</p>
-          <p>Our most advanced dual-camera system.</p>
-          <button>Add to Cart</button>
+          <h3 class="mb-0 font-weight-semibold">RM3899</h3>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+             <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+
+         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
   </div>
       
@@ -236,11 +256,11 @@ p.ex1 {
   <div class="column">
      <div class="Phone">
         <div class="card">
-          <img src="Image/Iphone11.jpg"  style="width:50%;">
+          <img src="Image/Iphone11.jpg"  >
           <h3>Iphone 11</h3>
           <p>Some text</p>
           <p>Some text</p>
-          <button>Add to Cart</button>
+          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
      </div>
   </div>
@@ -248,11 +268,11 @@ p.ex1 {
   <div class="column">
      <div class=" Phone">
         <div class="card">
-          <img src="Image/Iphone13pro.jpg"  style="width:50%">
+          <img src="Image/Iphone13pro.jpg"  >
           <h3>Iphone 13 pro max</h3>
           <p>Some text</p>
           <p>Some text</p>
-          <button>Add to Cart</button>
+          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
      </div>  
   </div>
@@ -261,11 +281,11 @@ p.ex1 {
    <div class="column">
      <div class=" laptop">   
         <div class="card">
-          <img src="Image/Asus.png"  style="width:50%">
+          <img src="Image/Asus.png"  >
           <h3>Zenbook 14 UX425</h3>
           <p>Some text</p>
           <p>The beautiful new ZenBook 14 is more portable than ever. ZenBook 14 is perfect choice for an effortless on-the-go lifestyle.</p>
-          <button>Add to Cart</button>
+          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
     </div>   
   </div> 

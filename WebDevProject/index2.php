@@ -170,13 +170,6 @@ p.ex1 {
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-<!--        <script>
-        Swal.fire(
-        'Good job!',
-        'Welcome To Online Electronic Sales (OES)',
-        'success'
-          )
-        </script>-->
    <?php
         unset($_SESSION['username']);
             

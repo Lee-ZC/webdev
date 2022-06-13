@@ -2,12 +2,16 @@
 session_start();
 
     include("server.php");
-
+    
+    
+   
+    
+    
 ?>
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
     
 <head>
@@ -43,26 +47,36 @@ session_start();
     
     <div class="row">
         <div class="col-md-6 offset-3">
-            <form action="">
+            <form action="post">
                 <?php
-                    $currentUser  = $_SESSION['username'];
-                    $sql = "SELECT * FROM users WHERE username = '$currentUser' ";
+                
+                if($_SERVER['REQUEST_METHOD'] == "POST")
+                {
                     
-                    $gotResults = mysqli_query($con,$sql);
-                    
-                    if ($gotResults){
-                        if(mysqli_num_rows($gotResults)>0){
-                            while($row = mysqli_fetch_array($gotResults)){
-                                print_r($row['username']);
-                                
-                            }
-                            
-                            
-                        }
-                        
-                    }
-                    
-                    
+                //something was posted
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                
+                
+                $currentUser  = $_SESSION['username'] ;
+                $sql = "SELECT * FROM users WHERE username = '$currentUser' ";
+
+                 $gotResults = mysqli_query($con,$sql);
+
+                 if ($gotResults){
+                    if(mysqli_num_rows($gotResults)>0){
+                         while($row = mysqli_fetch_array($gotResults)){
+                            print_r($row['username']);
+                         }
+                     }
+
+                }
+
+
+
+                }
+                
+                
                 ?>
                 
                 

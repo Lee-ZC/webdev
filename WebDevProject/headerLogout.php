@@ -5,6 +5,7 @@
   <title>Online Electronic Sales (OES)</title>
   <link rel="stylesheet" href="Bootstrap/header.css">
   <link rel="stylesheet" href="Bootstrap/mystyle.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <style>
@@ -74,7 +75,7 @@
 <div class="scrollmenu topnav" style="text-align:left" >
     <img src="Image/ZClogo.png"  width="45" height="40" alt="logo" style="margin-left: 1%;" >
     <a href="index2.php">Home</a>
-    <a href="cart.php">Cart</a>
+    <a href="#">Cart</a>
     <a href="#contact">Support</a>
     <a href="#about">About</a>
     <div class="dropdown">
@@ -83,7 +84,7 @@
         </button>
         <div class="dropdown-content">
           <a href="setting.php">Setting</a>
-          <a href="index.php">Logout</a>
+          <a onclick="sweetalert()">Logout</a>
         </div>
   </div> 
     <div class="search-container" style="position: relative; right: -97px ;">
@@ -96,7 +97,26 @@
 
 
 
-
+<script>
+    
+    function sweetalert(){
+        Swal.fire({
+        title: 'Are you sure to logout?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href="index.php";
+          
+        }
+      })       
+    }
+    
+    
+</script>
 
 
 </body>

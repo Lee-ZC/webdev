@@ -12,6 +12,17 @@ session_start();
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            
+            
+            //Validate Duplicate Username 
+            $duplicate = mysqli_query($con, "select * from users where username='$username' ");
+            
+            if (mysqli_num_rows($duplicate)>0)
+            {
+            header("Location: register.php");
+            $_SESSION['Duplicate_status'] = 'Username already used !';
+            die;
+            }
 
             if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) )
             {
@@ -143,6 +154,29 @@ a {
    <?php
         unset($_SESSION['status']);  
     }
+    
+    ?>
+        
+        
+        
+<?php 
+    
+    if(isset($_SESSION['Duplicate_status'])){
+        
+        ?>
+        <script>
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Username already used !',
+        footer: '<a href="support.php">Why do I have this issue?</a>'
+        })
+        </script>
+   
+   <?php
+        unset($_SESSION['Duplicate_status']);  
+    }
+    
     
     ?>
 
