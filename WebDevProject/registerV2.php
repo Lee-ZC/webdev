@@ -104,9 +104,11 @@ body {
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .row{
 height: 100%;
 } 
+
 .myCard {
   position: relative;
   background: #fff;
@@ -116,15 +118,18 @@ height: 100%;
   -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
 } 
+
 .myRightCtn header {
   color: #fff;
   font-size: 44px;
 }
+
 .box {
   position: relative;
   margin: 20px;
   margin-bottom: 100px;
 } 
+
 .myLeftCtn .myInput {
   width: 230px;
   border-radius: 25px;
@@ -135,13 +140,16 @@ height: 100%;
   -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
 }
+
 .myLeftCtn .myInput:focus {
   outline: none;
 } 
+
 .myForm {
   position: relative;
   margin-top: 50px;
 } 
+
 .myLeftCtn .butt {
   background: linear-gradient(45deg, #bb36fd, #9b00e8);
   color: #fff;
@@ -153,17 +161,21 @@ height: 100%;
   -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
 } 
+
 .myLeftCtn .butt:hover {
   background: linear-gradient(45deg, #c85bff, #b726ff);
 }
+
 .myLeftCtn .butt:focus {
   outline: none;
 } 
+
 .myLeftCtn .fas {
   position: relative;
   color: #bb36fd;
   left: 36px;
 } 
+
 .butt_out {
   background: transparent;
   color: #fff;
@@ -175,9 +187,11 @@ height: 100%;
   -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
 } 
+
 .butt_out:hover {
   border: 2px solid#eecbff;
 } 
+
 .butt_out:focus {
   outline: none;
 }
@@ -239,18 +253,17 @@ height: 100%;
                 <div class="col-md-6">
                     <div class="myLeftCtn"> 
                         <form class="myForm text-center" method ="post" action="registerV2.php" >
-                            <header>Create new account</header>
-                            <br>
+                            <header>Create new account</header>                         
                             <div class="form-group">
                                 <i class="fas fa-user"></i>
                                 <input class="myInput" type="text" placeholder="Username" id="username" name="username" required> 
-                            </div>
-
+                            </div>                 
+                            
                             <div class="form-group">
                                 <i class="fas fa-envelope"></i>
                                 <input class="myInput" placeholder="Email" type="text" id="email" name="email" required> 
                             </div>
-
+                            
                             <div class="form-group">
                                 <i class="fas fa-lock"></i>
                                 <input class="myInput" type="password" id="password" placeholder="Password"  name="password"  required> 

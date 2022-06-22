@@ -19,7 +19,8 @@
 
 
 body  {
-  background-color:  #b5b0b0;
+/*  background-color:  #b5b0b0;*/
+  background: linear-gradient(to right, #b92b27, #1565c0);
 }
 </style>
 

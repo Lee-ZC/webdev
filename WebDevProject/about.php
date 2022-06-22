@@ -73,9 +73,10 @@ html {
 
 
 body {
-  background-color:  #B97A6C;
+ background: linear-gradient(to right, #b92b27, #1565c0);
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
+
 #myBtn {
   display: none;
   position: fixed;
@@ -115,14 +116,12 @@ body {
 
 <div class="about-section">
   <h1>About Us</h1>
+  <br>
   <p>Online Electronic Sales(OES) is a website that sell a variety of electronic products to the consumers.</p>
   <p>Through this website, it also can enhance the shopping experience of the consumers since the website has a user-friendly user interface.</p>
 </div>
 
 <br>
-
-<!-- Back-To-Top -->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
 
 
@@ -190,29 +189,7 @@ body {
     }
     
     
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-
+   
 
 </script>
 

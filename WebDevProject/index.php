@@ -119,7 +119,7 @@ p.ex1 {
   display: none;
   position: fixed;
   bottom: 20px;
-  left: 30px;
+  right: 30px;
   z-index: 99;
   font-size: 18px;
   border: none;
@@ -139,9 +139,6 @@ p.ex1 {
     COLOR: RED;
 }
 
-
-
-
 </style>
 
 
@@ -156,11 +153,8 @@ p.ex1 {
 <?php require_once ('header.php'); ?>
 
 
-
-
 <!-- Back-To-Top -->
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-
 
 
 
@@ -177,7 +171,7 @@ p.ex1 {
   </div>
   
   
-  
+ 
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -208,14 +202,13 @@ p.ex1 {
 <br>
 <br>
 
-
+<?php require_once ('popup.php'); ?>
 
 
 
 <center>
 <h2>Featured <b>Products</b></h2>
  <hr width="15%" color="red"  size="5px" />
-
 </center>
 
 
@@ -367,9 +360,11 @@ p.ex1 {
 
 
 
+
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtn");
+
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -389,7 +384,6 @@ function topFunction() {
 }
     
     
-
 
 //Filter 
 filterSelection("all")
