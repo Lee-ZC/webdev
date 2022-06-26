@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>About Us</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -112,9 +113,12 @@ body {
     
 
 <!-- Site navigation menu -->
-<?php require_once ('header.php'); ?>
+<?php require_once ('headerLogoutV2.php'); ?>
 
-<div class="about-section">
+<br>
+
+<div class="about-section" style= "background: linear-gradient(45deg,#00dbde,#fc00ff);">
+  <br>
   <h1>About Us</h1>
   <br>
   <p>Online Electronic Sales(OES) is a website that sell a variety of electronic products to the consumers.</p>

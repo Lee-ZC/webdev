@@ -12,25 +12,25 @@ session_start();
             if(!empty($username) && !empty($password) && !is_numeric($username))
             {
 
-                    //read from database
-                    $query = "select * from users where username = '$username' limit 1";
-                    $result = mysqli_query($con, $query);
+                //read from database
+                $query = "select * from users where username = '$username' limit 1";
+                $result = mysqli_query($con, $query);
 
-                    if($result)
+                if($result)
+                {
+                    if($result && mysqli_num_rows($result) > 0)
                     {
-                            if($result && mysqli_num_rows($result) > 0)
-                            {
-                                $user_data = mysqli_fetch_assoc($result);
+                        $user_data = mysqli_fetch_assoc($result);
 
-                                if($user_data['password'] === $password)
-                                {                                  
-                                    $_SESSION['username'] =  $username;
-                                    header("Location: index2.php");
-                                
-                                    die;
-                                }
-                            }
+                        if($user_data['password'] === $password)
+                        {                                  
+                            $_SESSION['username'] =  $username;
+                            header("Location: index2.php");
+
+          
+                        }
                     }
+                }
 
                     $_SESSION['StatusInvalid'] = 'Invalid Username OR Email !';
             }else
@@ -38,6 +38,8 @@ session_start();
                     $_SESSION['StatusInvalid'] = 'Invalid Username OR Email !';
             }
 	}
+        
+        
 
 ?>
 
@@ -47,7 +49,7 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-  <title>Online Electronic Sales (OES)</title>
+  <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
@@ -87,7 +89,7 @@ body {
     padding: 40px 30px 30px 30px;
     background-color: #ecf0f3;
     border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+/*    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;*/
 }
 
 .logo {
@@ -177,7 +179,7 @@ body {
 <body>    
     
    <!-- Site navigation menu -->
-   <?php require_once ('header.php'); ?>
+   <?php require_once ('headerV2.php'); ?>
    
    <?php 
 

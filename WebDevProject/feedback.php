@@ -7,10 +7,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Contact Form</title>
+    <title>FeedBack</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
- 
+    <link rel="icon" href="Image/ZClogo.ico" />
     
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -153,7 +153,7 @@
       min-width: 420px;
       position: fixed;
       right: 0;
-      top: 10px;
+      top: 68px;
       border-left: 8px solid #3AD66E;
       border-radius: 4px;
     }
@@ -176,10 +176,10 @@
   
   
   <body>
-    <?php require_once ('header.php'); ?>
+    <?php require_once ('headerLogoutV2.php'); ?>
 
 <!--    alert messages start
-    <div class="alert-success">
+    <div class="alert-success" style="top: 68px;" >
       <span>Message Sent! Thank you for contacting us.</span>
     </div>
     <div class="alert-error">
@@ -188,10 +188,14 @@
     alert messages end-->
 
     <!--alert messages start-->
+    <br>
+    <br>
     <?php echo $alert; ?>
     <!--alert messages end-->
 
-    
+  
+    <br>
+
     <!--contact section start-->
     <div class="contact-section">
       <div class="contact-info">

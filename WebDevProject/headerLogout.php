@@ -4,7 +4,7 @@
 <head>
   <title>Online Electronic Sales (OES)</title>
   <link rel="stylesheet" href="Bootstrap/header.css">
-  <link rel="stylesheet" href="Bootstrap/mystyle.css">
+  <link rel="stylesheet" href="Bootstrap/index.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 

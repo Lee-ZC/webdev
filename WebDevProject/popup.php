@@ -55,13 +55,11 @@
 
 
 
-
-
 <body>
     
     <div class="popup">
         <button id="close">&times;</button>
-        <h2> Register Account Now !  </h2>
+        <h3> Register Account Now !  </h3>
         <p>
             <center>Register account and buy electric product with us </center>
         </p>

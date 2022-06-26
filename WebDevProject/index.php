@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Online Electronic Sales (OES)</title>
-  <link rel="stylesheet" href="Bootstrap/mystyle.css">
+  <link rel="stylesheet" href="Bootstrap/index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 
 <!--Icon-->
@@ -13,6 +14,28 @@
 
 
 <style>
+    
+.filterDiv {
+float: left;
+/*background-color: #2196F3;
+color: #ffffff;*/
+width: 350px;
+/*line-height: 100px;
+text-align: center;
+margin: 2px;*/
+display: none;
+}
+
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
 .card {
   max-width: 350px;
   margin: auto;
@@ -95,7 +118,7 @@
 
 
 body  {
-/*  background-color:  #b5b0b0;*/
+
   background: linear-gradient(to right, #b92b27, #1565c0);
 }
 
@@ -104,15 +127,15 @@ p.ex1 {
 }
 
 .dot {
-      cursor: pointer;
-      height: 8px;
-      width: 8px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
+cursor: pointer;
+height: 8px;
+width: 8px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
     
     
 #myBtn {
@@ -150,7 +173,7 @@ p.ex1 {
 
     
 <!-- Site navigation menu -->
-<?php require_once ('header.php'); ?>
+<?php require_once ('headerV2.php'); ?>
 
 
 <!-- Back-To-Top -->
@@ -159,42 +182,39 @@ p.ex1 {
 
 
 
-<!-- Slide Show -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <!-- Slide Show -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel"  style=" top: 60px;" >
 
-    
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  
-  
- 
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="Image/announcement2.png" alt="Los Angeles" class="d-block" style="width:100%; height: 600px;">
+
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Image/announcement2.png" alt="Los Angeles" class="d-block" style="width:100%; height: 600px;">
+        </div>
+        <div class="carousel-item">
+          <img src="Image/announcement1.png" alt="Chicago" class="d-block" style="width:100%; height: 600px;">
+        </div>
+        <div class="carousel-item">
+          <img src="Image/announcement3.PNG" alt="New York" class="d-block" style="width:100%; height: 600px;">
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+      
     </div>
-    <div class="carousel-item">
-      <img src="Image/announcement1.png" alt="Chicago" class="d-block" style="width:100%; height: 600px;">
-    </div>
-    <div class="carousel-item">
-      <img src="Image/announcement3.PNG" alt="New York" class="d-block" style="width:100%; height: 600px;">
-    </div>
-  </div>
-  
-  
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
 
 
 
@@ -204,7 +224,9 @@ p.ex1 {
 
 <?php require_once ('popup.php'); ?>
 
-
+<br>
+<br>
+<br>
 
 <center>
 <h2>Featured <b>Products</b></h2>
@@ -214,10 +236,10 @@ p.ex1 {
 
 <div id="myBtnContainer" style="text-align:center">
     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-    <button class="btn" onclick="filterSelection('Phone')"> Phone </button>
-    <button class="btn" onclick="filterSelection('laptop')"> Laptop </button>
-    <button class="btn" onclick="filterSelection('earphone')"> Earphone </button>
-    <button class="btn" onclick="filterSelection('watch')"> Smart Watch </button>
+    <button class="btn active" onclick="filterSelection('Phone')"> Phone </button>
+    <button class="btn active" onclick="filterSelection('laptop')"> Laptop </button>
+    <button class="btn active" onclick="filterSelection('earphone')"> Earphone </button>
+    <button class="btn active" onclick="filterSelection('watch')"> Smart Watch </button>
 </div>
 
 <br>
@@ -226,61 +248,82 @@ p.ex1 {
 <div class="row" >
   <div class="column">
       
-    <div class="Phone">
+    <div class="filterDiv Phone">
         <div class="card">
-          <img src="Image/Iphoe13.jpg"  >
+          <img src="Image/Iphoe13.jpg" style=" width: 290px; height: 290px;">
           <h3>Iphone 13</h3>
-          <h3 class="mb-0 font-weight-semibold">RM3899</h3>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
           <div>
             <i class="fa fa-star star"></i>
             <i class="fa fa-star star"></i>
             <i class="fa fa-star star"></i>
             <i class="fa fa-star star"></i>
-             <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
          </div>
          <div class="text-muted mb-3">34 reviews</div>
 
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+         <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
   </div>
       
   </div>
 
   <div class="column">
-     <div class="Phone">
+     <div class="filterDiv Phone">
         <div class="card">
-          <img src="Image/Iphone11.jpg"  >
+          <img src="Image/Iphone11.jpg"  style=" width: 300px; height: 295px;" >
           <h3>Iphone 11</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+          <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
      </div>
   </div>
   
   <div class="column">
-     <div class=" Phone">
+     <div class="filterDiv Phone">
         <div class="card">
-          <img src="Image/Iphone13pro.jpg"  >
+          <img src="Image/Iphone13pro.jpg" style=" width: 300px; height: 295px;"  >
           <h3>Iphone 13 pro max</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+         <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
      </div>  
   </div>
     
    
    <div class="column">
-     <div class=" laptop">   
-        <div class="card">
-          <img src="Image/Asus.png"  >
-          <h3>Zenbook 14 UX425</h3>
-          <p>Some text</p>
-          <p>The beautiful new ZenBook 14 is more portable than ever. ZenBook 14 is perfect choice for an effortless on-the-go lifestyle.</p>
-          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-        </div>
-    </div>   
+       <div class="filterDiv Phone">  
+            <div class="card">
+              <img src="Image/samsungs22.png"  style=" width: 300px; height: 295px;" >
+              <h3>SamSung S22</h3>
+             <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+              <div>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+             </div>
+             <div class="text-muted mb-3">34 reviews</div>
+              <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+            </div>
+        </div>  
   </div> 
   
 </div>
@@ -293,50 +336,79 @@ p.ex1 {
 
 <div class="row" >
   <div class="column">
-    <div class=" earphone">  
+    <div class="filterDiv earphone">  
         <div class="card">
-          <img src="Image/airpods.png"  style="width:50%">
+          <img src="Image/airpods.png" style=" width: 300px; height: 250px;" >
           <h3>Apple Airpods Pro</h3>
-          <p>RM3899.00</p>
-          <p>Our most advanced dual-camera system.</p>
-          <button>Add to Cart</button>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+         <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
     </div>  
   </div>
 
     
   <div class="column">
-    <div class=" Phone">  
+      <div class="filterDiv laptop">   
         <div class="card">
-          <img src="Image/samsungs22.png"  style="width:50%">
-          <h3>Samsung S22</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-          <button>Add to Cart</button>
+          <img src="Image/Asus.png" style=" width: 300px; height: 250px;" >
+          <h3>Zenbook 14 UX425</h3>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+          <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
-    </div>  
+    </div> 
+    
   </div>
   
   <div class="column">
-    <div class=" laptop">  
+    <div class="filterDiv laptop">  
         <div class="card">
-          <img src="Image/surfacelaptopgo.png"  style="width:50%">
+          <img src="Image/surfacelaptopgo.png"  style=" width: 300px; height: 220px;" >
           <h3>Microsoft Surface Laptop Go</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-          <button>Add to Cart</button>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+         <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
     </div> 
   </div>
     
   <div class="column">
-     <div class=" watch">  
+     <div class="filterDiv watch">  
         <div class="card">
-          <img src="Image/series3.png"  style="width:50%">
+          <img src="Image/series3.png"  style=" width: 300px; height: 250px;" >
           <h3>Apple Watch Series 3</h3>
-          <p>Some text</p>
-          <p>Some text</p>
-          <button>Add to Cart</button>
+          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
+          <div>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i>
+         </div>
+         <div class="text-muted mb-3">34 reviews</div>
+         <button type="button" class="btn bg-cart" onclick="sweetalertclick()" ><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
         </div>
     </div> 
   </div>
@@ -429,6 +501,28 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+
+ function sweetalertclick(){
+     
+     const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'warning',
+        title: 'Need to Sign In Account'
+      })
+      
+    }
 
 </script>
 

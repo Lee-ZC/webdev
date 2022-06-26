@@ -8,6 +8,7 @@ session_start();
       
     if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
+        
             //something was posted
             $username = $_POST['username'];
             $email = $_POST['email'];
@@ -17,14 +18,16 @@ session_start();
             //Validate Duplicate Username 
             $duplicate = mysqli_query($con, "select * from users where username='$username' ");
             
+            
             if (mysqli_num_rows($duplicate)>0)
             {
             header("Location: register.php");
             $_SESSION['Duplicate_status'] = 'Username already used !';
-            die;
+            //die;
             }
+            
 
-            if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) )
+            if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($password) > 5 )
             {
                     //save to database
                     $query = "insert into users (username,email,password) values ('$username','$email','$password')";
@@ -33,7 +36,7 @@ session_start();
                     $_SESSION['status'] = 'Register Successfully';
                     header("Location: login.php");
                     
-                    die;
+//                    die;
             }else
             {
                     //echo $alert;

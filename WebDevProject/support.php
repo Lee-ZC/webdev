@@ -2,6 +2,7 @@
 <html>
     
 <head>
+    <title>Support</title>
 
 <style>
 .container1 {
@@ -33,10 +34,11 @@ body  {
 <body>
     
     <!-- Site navigation menu -->
-    <?php require_once ('header.php'); ?>
+    <?php require_once ('headerV2.php'); ?>
 
+    
     <div class="container1">
-        <img src="Image/support.png" width="1519" height="600">
+        <img src="Image/support.png" width="1535" height="600">
         <div class="centered"> <h1>Customer Support</h1></div>
     </div>
     
@@ -51,17 +53,7 @@ body  {
     </h2>
     
     <br>
-  
-    
-<!--    <p style=" margin-left: 2.5em; padding: 0 7em 2em 0;  color: green; ">
-      Click on the Live Chat button and we’ll find you the best solution    
-      <i class="fa fa-arrow-right" style= " margin-left: 5em;    color: greenyellow; " ></i>
-      <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
-      <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; "></i>
-      <i class="fa fa-arrow-right" style= " margin-left: 10em;    color: greenyellow; " ></i>
-    <p>
-    -->
-    
+   
     
     <!-- Live Chat -->
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>

@@ -16,21 +16,22 @@ session_start();
             
             //Validate Duplicate Username 
             $duplicate = mysqli_query($con, "select * from users where username='$username' ");
-            
             if (mysqli_num_rows($duplicate)>0)
             {
             header("Location: registerV2.php");
             $_SESSION['Duplicate_status'] = 'Username already used !';
             die;
             }
-
-            if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) )
+            
+            //Validate username & email format 
+            if( !is_numeric($username) && filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($password) > 5  )
             {
                     //save to database
                     $query = "insert into users (username,email,password) values ('$username','$email','$password')";
                     mysqli_query($con, $query);
                         
                     $_SESSION['status'] = 'Register Successfully';
+                    $_SESSION['email'] = $email ; 
                     header("Location: loginV2.php");
                     
                     die;
@@ -48,7 +49,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -60,11 +61,11 @@ session_start();
     <link rel="icon" href="Image/ZClogo.ico" /> 
 
 
-    <style>
-    *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 body {
   background: #fbf3ff;
@@ -201,7 +202,7 @@ height: 100%;
 <body> 
     
     <!-- Site navigation menu -->
-   <?php require_once ('header.php'); ?>
+   <?php require_once ('headerV2.php'); ?>
     
     
     <br>
@@ -253,7 +254,7 @@ height: 100%;
                 <div class="col-md-6">
                     <div class="myLeftCtn"> 
                         <form class="myForm text-center" method ="post" action="registerV2.php" >
-                            <header>Create new account</header>                         
+                            <h4>Create new account</h4>                         
                             <div class="form-group">
                                 <i class="fas fa-user"></i>
                                 <input class="myInput" type="text" placeholder="Username" id="username" name="username" required> 
