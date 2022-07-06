@@ -22,7 +22,18 @@
         <div class="nav-items">
           <i class="uil uil-times nav-close-btn"></i>
           <a href="index2.php"><i class="uil uil-home"></i> Home</a>
-          <a href="cart.php"><i class="uil uil-compass"></i> Cart</a>
+          
+          <?php
+          include("server.php");
+
+            $select_rows = mysqli_query($con, "SELECT * FROM `cart`") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+
+            ?>
+          <a href="cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
+          
+          
+          
           <a href="feedback.php"><i class="uil uil-compass"></i> FeedBack</a>
           <a href="about.php"><i class="uil uil-info-circle"></i> About</a>
           <a href="setting.php"><i class="uil uil-info-circle"></i> Setting</a>

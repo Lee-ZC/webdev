@@ -174,7 +174,7 @@ body{
         <script>
         Swal.fire(
             'Update Successfully ! ',
-            'You profile have been updated !',
+            'User Type have been updated !',
             'success'
           )
         </script>
@@ -192,7 +192,7 @@ body{
 
 <div align="center" style= "background: linear-gradient(45deg,#00dbde,#fc00ff);" >
     <hr>
-    <h3>Update User Information</h3>
+    <h3>Setting User Profile</h3>
     <hr>
 </div>
     
@@ -230,7 +230,7 @@ body{
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" name="id"  placeholder= <?php echo session_id() ?> required>
+                <input type="text" class="form-control item" name="id" required  placeholder= "Enter ID : <?php echo $_SESSION['id']; ?>" >
             </div>
             <div class="form-group">
                 <input type="text" class="form-control item" name="UpdateUserName"   required placeholder=<?php echo $_SESSION['username']; ?> >

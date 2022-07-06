@@ -23,9 +23,20 @@ session_start();
                         $user_data = mysqli_fetch_assoc($result);
 
                         if($user_data['password'] === $password)
-                        {                                  
+                        {
+                            
+                            //Validate user type
+                            if ($user_data['usertype']=="users"){
+                                
                             $_SESSION['username'] =  $username;
+                            $_SESSION['id'] =$user_data['id'];
                             header("Location: index2.php");
+                            
+                            }
+                            
+                            else{
+                                header("Location: Admin/adminV2.php");
+                            }
 
           
                         }
@@ -38,8 +49,6 @@ session_start();
                     $_SESSION['StatusInvalid'] = 'Invalid Username OR Email !';
             }
 	}
-        
-        
 
 ?>
 
@@ -189,7 +198,7 @@ body {
         Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Username OR Email Not Found!',
+        text: 'Username OR Password incorrect!',
         footer: '<a href="support.php">Why do I have this issue?</a>'
         })
         </script>

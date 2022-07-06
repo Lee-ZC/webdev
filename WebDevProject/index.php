@@ -118,7 +118,6 @@ display: none;
 
 
 body  {
-
   background: linear-gradient(to right, #b92b27, #1565c0);
 }
 
@@ -161,7 +160,6 @@ transition: background-color 0.6s ease;
 .star {
     COLOR: RED;
 }
-
 </style>
 
 
@@ -421,9 +419,9 @@ transition: background-color 0.6s ease;
 
 
 
-<footer>
+<footer style ="background: linear-gradient(45deg,#00dbde,#fc00ff);">
 <p>
-<a href = "Sitemap.php" style="text-decoration: none;">Site Map</a><br>
+<a href = "Sitemap.php" style="text-decoration: none; ">Site Map</a><br>
 © 2020 Copyright: OES.com<br>
 </footer>
 

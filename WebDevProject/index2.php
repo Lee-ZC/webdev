@@ -1,5 +1,26 @@
 <?php 
-session_start()
+session_start();
+include("server.php");
+
+if(isset($_POST['add_to_cart'])){
+
+   $product_name = $_POST['product_name'];
+   $product_price = $_POST['product_price'];
+   $product_image = $_POST['product_image'];
+   $product_quantity = 1;
+
+   $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE name = '$product_name'");
+
+   if(mysqli_num_rows($select_cart) > 0){
+      $message[] = 'product already added to cart';
+   }else{
+      $insert_product = mysqli_query($con, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
+      $message[] = 'product added to cart succesfully';
+   }
+
+}
+
+
 ?>
 
 
@@ -19,8 +40,7 @@ session_start()
 
 
 
-<style>
-    
+<style>    
 .filterDiv {
 float: left;
 /*background-color: #2196F3;
@@ -168,6 +188,114 @@ transition: background-color 0.6s ease;
     COLOR: RED;
 }
 
+
+
+/*NEW product*/
+/*.display-product-table table{
+   width: 100%;
+   text-align: center;
+}
+
+.display-product-table table thead th{
+   padding:1.5rem;
+   font-size: 1.4rem;
+   background-color: var(--black);
+   color:var(--white);
+}
+
+.display-product-table table td{
+   padding:1.5rem;
+   font-size: 1.5rem;
+   color:var(--black);
+}
+
+.display-product-table table td:first-child{
+   padding:10;
+}
+
+.display-product-table table tr:nth-child(even){
+   background-color: var(--bg-color);
+}
+
+.display-product-table .empty{
+   margin-bottom: 2rem;
+   text-align: center;
+   background-color: var(--bg-color);
+   color:var(--black);
+   font-size: 2rem;
+   padding:1.5rem;
+}*/
+
+/*.display-product-table{
+      overflow-x: scroll;
+   }
+
+   .display-product-table table{
+      width: 0rem;
+   }*/
+
+
+.container2{
+  
+   margin:0 auto;
+/*    padding-bottom: 5rem; */
+}
+
+section{
+   padding:2rem;
+}
+
+:root{
+   --blue:#2980b9;
+   --red:tomato;
+   --orange:orange;
+   --black:#333;
+   --white:#fff;
+   --bg-color:#eee;
+   --dark-bg:rgba(0,0,0,.7);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --border:.1rem solid #999;
+}
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+.products .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 35rem);
+   gap:1.5rem;
+   justify-content: center;
+}
+
+.products .box-container .box{
+   text-align: center;
+   padding:2rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   border-radius: .5rem;
+}
+
+.products .box-container .box img{
+   height: 25rem;
+}
+
+.products .box-container .box h3{
+   margin:1rem 0;
+   font-size: 2.0rem;
+   color:var(--black);
+}
+
+.products .box-container .box .price{
+   font-size: 1.5rem;
+   color:var(--black);
+}
+
 </style>
 
 
@@ -282,7 +410,7 @@ transition: background-color 0.6s ease;
          </div>
          <div class="text-muted mb-3">34 reviews</div>
 
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+         <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
         </div>
   </div>
       
@@ -302,7 +430,7 @@ transition: background-color 0.6s ease;
             <i class="fa fa-star star"></i>
          </div>
          <div class="text-muted mb-3">34 reviews</div>
-          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+          <button type="button" class="btn bg-cart" onclick="document.location='Product2.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
         </div>
      </div>
   </div>
@@ -321,7 +449,7 @@ transition: background-color 0.6s ease;
             <i class="fa fa-star star"></i>
          </div>
          <div class="text-muted mb-3">34 reviews</div>
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+          <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
         </div>
      </div>  
   </div>
@@ -341,7 +469,7 @@ transition: background-color 0.6s ease;
                 <i class="fa fa-star star"></i>
              </div>
              <div class="text-muted mb-3">34 reviews</div>
-              <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+             <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
             </div>
         </div>  
   </div> 
@@ -435,18 +563,77 @@ transition: background-color 0.6s ease;
   
 </div>
 
+
+
+
+
+
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
 
 
+<center>
+<h2>Latest Products <b>Arivals</b></h2>
+ <hr width="15%" color="red"  size="5px" />
+</center>
 
-<footer>
+
+    <div class="container2">
+
+        <section class="products">
+
+
+           <div class="box-container" >
+
+              <?php
+
+              $select_products = mysqli_query($con, "SELECT * FROM `products`");
+              if(mysqli_num_rows($select_products) > 0){
+                 while($fetch_product = mysqli_fetch_assoc($select_products)){
+              ?>
+
+              <form action="" method="post">
+                 <div class="box"  style= "background-color: #fefbd8;">
+                    <img src="Admin/uploaded_img/<?php echo $fetch_product['image']; ?>"  style=" width: 290px; height: 290px;">
+                    <h3><?php echo $fetch_product['name']; ?></h3>
+                    <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+                    <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+<!--                  <input type="submit" class="btn" value="add to cart" name="add_to_cart" style= "background: yellow;" >-->
+                 <a href="product.php?id=<?php echo  $fetch_product['id']; ?>" type="button" input type="submit" class="btn bg-cart" style= "background: yellow;"  name="add_to_cart"><i class="fa fa-eye mr-2"></i> View Details</a>
+                 </div>
+              </form>
+
+              <?php
+                 };
+              };
+              ?>
+
+           </div>
+
+        </section>
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<footer style ="background: linear-gradient(45deg,#00dbde,#fc00ff);">
 <p>
-<a href = "Sitemap.php" style="text-decoration: none;">Site Map</a><br>
+<a href = "Sitemap.php" style="text-decoration: none; ">Site Map</a><br>
 © 2020 Copyright: OES.com<br>
 </footer>
-
 
 
 

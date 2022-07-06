@@ -1,38 +1,4 @@
-<?php 
-
-session_start();
-
-include("server.php");
-
-    $id ="";
-    if(isset($_GET["id"]))
-    {
-        $id = $_GET["id"];
-    }
-    
-    $sql_query = "SELECT * FROM `products` WHERE id = '$id'";
-    
-    
-    $result = $con -> query($sql_query) ;
-    
-    
-    if(isset($_POST['add_to_cart'])){
-
-        $product_name = $_POST['product_name'];
-        $product_price = $_POST['product_price'];
-        $product_image = $_POST['product_image'];
-        $product_quantity = 1;
-
-        $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE name = '$product_name'");
-
-        if(mysqli_num_rows($select_cart) > 0){
-           $message[] = 'product already added to cart';
-        }else{
-           $insert_product = mysqli_query($con, "INSERT INTO `cart`(name, price, image, quantity) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity')");
-           $message[] = 'product added to cart succesfully';
-        }
-
-     }
+<?php session_start()
 
 ?>
 
@@ -44,7 +10,7 @@ include("server.php");
     
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product</title>
+    <title>Iphone 13</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -236,45 +202,49 @@ include("server.php");
 		<div class="card" >
 			<div class="container-fliud">
 				<div class="wrapper row">
-                                     <?php 
-                                                    if($result ->num_rows > 0){
-                                                       while($fetch_product =  $result -> fetch_assoc( )){                                              
-                                                   ?>
-                                    <form action="" method="post">
 					<div class="preview col-md-6">
 						
 						<div class="preview-pic tab-content">
-                                                  
-						  <div class="tab-pane active" id="pic-1"  name="product_image"><img src="Admin/uploaded_img/<?php echo $fetch_product['image']; ?>"  style=" width: 290px; height: 290px;"></div>	
-                                                   
-						</div>												
-					</div>
-                                    
-                                    
-					<div class="details col-md-6">
-						<h3 class="product-title"  name="product_name" ><input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>"> <?php echo $fetch_product['name']; ?></h3>
+						  <div class="tab-pane active" id="pic-1"><img src="Image/Iphoe13.jpg " style=" width: 290px; height: 290px;" /></div>
+						  <div class="tab-pane" id="pic-2"><img src="https://images.frandroid.com/wp-content/uploads/2021/09/p1022463-scaled.jpg" style=" width: 300px; height: 200px;" /></div>
+						  <div class="tab-pane" id="pic-3"><img src="https://www.apple.com/v/iphone-13/f/images/meta/iphone-13_overview__cw1zea9uif0i_og.png" /></div>
+<!--						  <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>-->
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="Image/Iphoe13.jpg"  /></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="https://images.frandroid.com/wp-content/uploads/2021/09/p1022463-scaled.jpg" /></a></li>
+						  <li><a data-target="#pic-3" data-toggle="tab"><img src="https://www.apple.com/v/iphone-13/f/images/meta/iphone-13_overview__cw1zea9uif0i_og.png" /></a></li>
+<!--						  <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>-->
+						</ul>
 						
-<!--                                                <p class="product-description">
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">Iphone 13</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+									<span class="review-no">41 reviews</span>
+						</div>
+                                                <p class="product-description">
                                                  Apple's iPhone 13 features a ceramic shield front, Super Retina XDR display with True Tone and an A15 Bionic chip. The first design change users will notice is the smaller notch.
                                                  After years of using the same-sized notch to house the Face ID components, Apple has finally reduced its size by 20%.   
-                                                </p>-->
-                                                
-						<h4 class="price"  name="product_price">current price: <span> <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>"></span> <?php echo $fetch_product['price']; ?></h4>
-                                                
+                                                </p>
+						<h4 class="price">current price: <span>$RM 3899 </span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 						
                                                 
 						<div class="action">
-<!--							<button class="add-to-cart btn btn-default" type="button">add to cart</button>-->
-                                                        <input type="submit" class="btn" value="add to cart" name="add_to_cart" style= "background: yellow;" >
-                                                        <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
 						</div>
 					</div>
-                                    
-                                    </form>
-                                    <?php
-                                        };
-                                     };
-                                     ?>
 				</div>
 			</div>
 		</div>
