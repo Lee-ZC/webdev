@@ -2,24 +2,26 @@
 session_start();
 include("../server.php");
 
-if(isset($_POST['add_product'])){
-   $p_name = $_POST['p_name'];
-   $p_price = $_POST['p_price'];
-   $p_image = $_FILES['p_image']['name'];
-   $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
-   $p_image_folder = 'uploaded_img/'.$p_image;
-
-   $insert_query = mysqli_query($con, "INSERT INTO `products`(name, price, image) VALUES('$p_name', '$p_price', '$p_image')") or die('query failed');
-
-   if($insert_query){
-      move_uploaded_file($p_image_tmp_name, $p_image_folder);
-      $message[] = 'product add succesfully';
-      $_SESSION['AdminStatus'] = 'Added Successfully';
-   }else{
-      $message[] = 'could not add the product';
-      $_SESSION['AdminStatus2'] = 'Added Unsuccessfully';
-   }
-};
+//if(isset($_POST['add_product'])){
+//   $p_name = $_POST['p_name'];
+//   $p_desc = $_POST['p_desc'];
+//   $p_price = $_POST['p_price'];
+//   $p_image = $_FILES['p_image']['name'];
+//   $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
+//   $p_image_folder = 'uploaded_img/'.$p_image;
+//
+//   $insert_query = mysqli_query($con, "INSERT INTO `products`(`name`, `price`, `image` , `description`) VALUES ('$p_name','$p_price','$p_image','$p_desc');") or die('query failed');
+//
+//
+//   if($insert_query){
+//      move_uploaded_file($p_image_tmp_name, $p_image_folder);
+//      $message[] = 'product add succesfully';
+//      $_SESSION['AdminStatus'] = 'Added Successfully';
+//   }else{
+//      $message[] = 'could not add the product';
+//      $_SESSION['AdminStatus2'] = 'Added Unsuccessfully';
+//   }
+//};
 
 ?>
 
@@ -72,23 +74,23 @@ if(isset($_POST['add_product'])){
 
     
    
-    <form action="" method="post" class="add-product-form" enctype="multipart/form-data">
+    <form action="addProduct.php" method="post" class="add-product-form" enctype="multipart/form-data">
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             <div class="card px-1 py-4">
                 <div class="card-body">
-                    <h3 class="card-title mb-3" style="text-align: center;">Add Product</h3>
+                    <h3 class="card-title mb-3" style="text-align: center;">Add New Product</h3>
 
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <input type="text" name="p_name" placeholder="Enter the product name" class="form-control" required> </div>
+                                <input type="text" name="p_name" id="p_name" placeholder="Enter the product name" class="form-control" required> </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <div class="input-group"> 
-                                    <input type="number" name="p_price" min="0" placeholder="Enter the product price"  class="form-control" required>
+                                    <input type="number" name="p_price" id="p_price"min="0" placeholder="Enter the product price"  class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -97,13 +99,20 @@ if(isset($_POST['add_product'])){
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <div class="input-group">                               
-                                    <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="form-control" required>
+                                    <input type="file" name="p_image" id="p_image" accept="image/png, image/jpg, image/jpeg" class="form-control" required>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" name="p_desc"  id="p_desc"placeholder="Enter the product description" class="form-control" required> </div>
+                        </div>
+                    </div>
+
                     <br>
-                     <input type="submit" value="Add  product" name="add_product"  class="btn btn-primary btn-block confirm-button">
+                    <input type="submit" value="Add  product" name="add_product"  class="btn btn-primary btn-block confirm-button">
                 </div>
             </div>
         </div>
