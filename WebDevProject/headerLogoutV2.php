@@ -30,10 +30,8 @@
             $row_count = mysqli_num_rows($select_rows);
 
             ?>
-          <a href="cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
-          
-          
-          
+          <a href="cart.php" class="cart">Cart <span><?php echo $row_count; ?></span> </a>
+          <a href="wishlist.php"><i class="uil uil-compass"></i> Wishlist</a>              
           <a href="feedback.php"><i class="uil uil-compass"></i> FeedBack</a>
           <a href="about.php"><i class="uil uil-info-circle"></i> About</a>
           <a href="setting.php"><i class="uil uil-info-circle"></i> Setting</a>

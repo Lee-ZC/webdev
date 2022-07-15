@@ -15,12 +15,14 @@ include './server.php';
     if(isset($_GET['remove'])){
        $remove_id = $_GET['remove'];
        mysqli_query($con, "DELETE FROM `cart` WHERE id = '$remove_id'");
-       header('location:cart.php');
+       $_SESSION['status2'] = 'Delete Successfully';
+//       header('location:cart.php');
     };
 
     if(isset($_GET['delete_all'])){
        mysqli_query($con, "DELETE FROM `cart`");
-       header('location:cart.php');
+//       header('location:cart.php');
+       $_SESSION['status'] = 'Delete Successfully';
     }
 
 ?>
@@ -35,6 +37,7 @@ include './server.php';
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    
    
 
@@ -174,6 +177,43 @@ include './server.php';
     <br>
     <br>
    <i style="font-size:30px; padding: 20px" class="fa">&#xf07a; Shopping Cart </i>
+   
+   <?php 
+
+    if(isset($_SESSION['status'])){
+        
+        ?>
+        <script>
+        Swal.fire(
+            'All cart has been deleted ! ',
+            '',
+            'success'
+          )
+        </script>
+   
+   <?php
+        unset($_SESSION['status']);  
+    }    
+    ?>
+        
+        
+         <?php 
+
+    if(isset($_SESSION['status2'])){
+        
+        ?>
+        <script>
+        Swal.fire(
+            'Deleted Successfully ! ',
+            '',
+            'success'
+          )
+        </script>
+   
+   <?php
+        unset($_SESSION['status2']);  
+    }    
+    ?>
 
    <br>
 

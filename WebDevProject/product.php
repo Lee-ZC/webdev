@@ -12,7 +12,6 @@ include("server.php");
     
     $sql_query = "SELECT * FROM `products` WHERE id = '$id'";
     
-    
     $result = $con -> query($sql_query) ;
     
     
@@ -32,7 +31,27 @@ include("server.php");
            $message[] = 'product added to cart succesfully';
         }
 
+    }
+    
+    
+    if(isset($_POST['add_to_wishlist'])){
+
+        $product_name = $_POST['product_name'];
+        $product_price = $_POST['product_price'];
+        $product_image = $_POST['product_image'];
+       
+
+        $select_cart = mysqli_query($con, "SELECT * FROM `wishlist` WHERE name = '$product_name'");
+
+        if(mysqli_num_rows($select_cart) > 0){
+          $_SESSION['status2'] = 'Delete Successfully';
+        }else{
+           $insert_product = mysqli_query($con, "INSERT INTO `wishlist`(name, price, image) VALUES('$product_name', '$product_price', '$product_image')");
+          $_SESSION['status2'] = 'Delete Successfully';
+        }
+
      }
+    
 
 ?>
 
@@ -218,13 +237,36 @@ include("server.php");
         -webkit-transform: scale(1);
                 transform: scale(1); } }
 
+.span {
+      color: #ff9f1a; }
 
+.product-description {
+      margin-bottom: 15px; }
   </style>
 
   <body>
       
     <!-- Site navigation menu -->
     <?php require_once ('headerLogoutV2.php'); ?>
+
+        
+        
+    <?php 
+        if(isset($_SESSION['status2'])){
+
+            ?>
+            <script>
+            Swal.fire(
+                'Added To Wishlist ! ',
+                '',
+                'success'
+              )
+            </script>
+
+        <?php
+            unset($_SESSION['status2']);  
+        }    
+    ?>
     
     <br>
     <br>
@@ -254,18 +296,21 @@ include("server.php");
 					<div class="details col-md-6">
 						<h3 class="product-title"  name="product_name" ><input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>"> <?php echo $fetch_product['name']; ?></h3>
 						
-<!--                                                <p class="product-description">
-                                                 Apple's iPhone 13 features a ceramic shield front, Super Retina XDR display with True Tone and an A15 Bionic chip. The first design change users will notice is the smaller notch.
-                                                 After years of using the same-sized notch to house the Face ID components, Apple has finally reduced its size by 20%.   
-                                                </p>-->
+                                               <p class="product-description">
+                                               <input type="hidden" name="product_description" value="<?php echo $fetch_product['description']; ?>"> <?php echo $fetch_product['description']; ?> 
+                                               
+                                               </p>
                                                 
-						<h4 class="price"  name="product_price">current price: <span> <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>"></span> <?php echo $fetch_product['price']; ?></h4>
+						<h4 class="price"  name="product_price">current price: <span> <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>"></span><span> <?php echo $fetch_product['price']; ?></span></h4>
                                                 
 						
                                                 
-						<div class="action">
-<!--							<button class="add-to-cart btn btn-default" type="button">add to cart</button>-->
-                                                        <input type="submit" class="btn" value="add to cart" name="add_to_cart" style= "background: yellow;" >
+						<div class="action">							
+                                                        <input type="submit" class="btn" value="add to cart" name="add_to_cart" style= "background: yellow;" >  
+                                                        <br>
+                                                        <br>
+                                                        <span class="fa fa-heart" style= "color: orange;"> </span>
+                                                        <input type="submit" class="btn"  class="fa fa-heart" value="wishlist" name="add_to_wishlist" style= "background: orange;">
                                                         <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
 						</div>
 					</div>

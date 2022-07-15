@@ -44,16 +44,7 @@
   </header>
 
   
-   <?php 
-    $search_URL ="http://www.google.com/search?q=";
-    
-    
-    if(isset($_POST['search'])) {
-        $keywords = $_POST['search'];
-        header("location: ".$search_URL.$keywords.'');
-    }
-    
-    ?>
+   
  
 
   <script>
@@ -80,6 +71,19 @@
     closeBtn.addEventListener("click", () => {
       navigation.classList.remove("active");
     });
+    
+    
+    
+    
+   
+            
+    
+            
+            
+          
+    
+    
+    
   </script>
 
 </body>

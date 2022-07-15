@@ -2,14 +2,19 @@
 session_start();
 
     include("server.php");
+    
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
             //something was posted
             $username = $_POST['username'];
             $password = $_POST['password'];
+            
+            if(isset($_POST['g-recaptcha-response'])){
+                 $captcha=$_POST['g-recaptcha-response'];
+            }
 
-            if(!empty($username) && !empty($password) && !is_numeric($username))
+            if(!empty($username) && !empty($password) && !is_numeric($username)&& !empty($captcha))
             {
 
                 //read from database
@@ -66,6 +71,9 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  
+  
 </head>
 
 
@@ -187,6 +195,7 @@ body {
    
 <body>    
     
+    
    <!-- Site navigation menu -->
    <?php require_once ('headerV2.php'); ?>
    
@@ -260,18 +269,16 @@ body {
                 <span class="fas fa-key"></span>
                 <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn mt-3">Login</button>
+            <div class="g-recaptcha" data-sitekey="6LdKo_EgAAAAACV5M1Iv-E3B5OC-mtu3fWb0pQDX"></div>
+            <button type="submit" class="btn mt-3">Login</button>           
         </form>
         <div class="text-center fs-6">
             <a href="registerV2.php">Sign up</a>
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    
-    
+
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
 </body>
 </html>

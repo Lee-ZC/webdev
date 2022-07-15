@@ -5,7 +5,7 @@ include("server.php");
 
 if (isset($_POST['update'])){
     
-    $id = $_POST['id'];
+    //$id = $_POST['id'];
     $username = $_POST['UpdateUserName'];
     $email = $_POST['UpdateEmail'];
    
@@ -13,7 +13,7 @@ if (isset($_POST['update'])){
     
     
     //Update data from database 
-    $query = "UPDATE `users` SET username= '$_POST[UpdateUserName]', email = '$_POST[UpdateEmail]', password = '$_POST[UpdatePass]' WHERE id ='$_POST[id]'";
+    $query = "UPDATE `users` SET username= '$_POST[UpdateUserName]', email = '$_POST[UpdateEmail]', password = '$_POST[UpdatePass]' WHERE username ='$_POST[UpdateUserName]'";
     $query_run = mysqli_query($con,$query);
     
     
@@ -174,7 +174,7 @@ body{
         <script>
         Swal.fire(
             'Update Successfully ! ',
-            'User Type have been updated !',
+            'Password have been updated !',
             'success'
           )
         </script>
@@ -196,42 +196,13 @@ body{
     <hr>
 </div>
     
-<!--    <div class="row">
-        <div class="col-md-6 offset-3">
-            <form method="post" action ="">
-                
-                <div class="form-group" >
-                    <input type="text" class="form-comtrol"  name="id"  placeholder="Enter User ID" required>            
-                </div>
-                <br>
-                <div class="form-group">
-                    <input type="text"  class="form-comtrol" name="UpdateUserName"   required placeholder=<?php echo $_SESSION['username']; ?> > 
-                </div>
-                <br>
-                <div class="form-group">
-                    <input type="email"  class="form-comtrol" name="UpdateEmail"   required  placeholder=<?php echo $_SESSION['email']; ?>  >
-                </div>
-                <br>
-                <div class="form-group">
-                    <input type="text" class="form-comtrol" name="UpdatePass"  placeholder="Enter new password" required >
-                </div>
-                <br>
-                <br>
-                <div class="form-group">
-                    <input type="submit" name="update" class="btn btn-info" value="Update">
-                </div>
-            </form>   
-        </div>
-    </div>-->
+
 
      <div class="registration-form">
         <form method="post" action ="">
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" name="id" required  placeholder= "Enter ID : <?php echo $_SESSION['id']; ?>" >
-            </div>
+            </div>           
             <div class="form-group">
                 <input type="text" class="form-control item" name="UpdateUserName"   required placeholder=<?php echo $_SESSION['username']; ?> >
             </div>

@@ -21,6 +21,7 @@ if(isset($_POST['update_product'])){
    $update_p_id = $_POST['update_p_id'];
    $update_p_name = $_POST['update_p_name'];
    $update_p_price = $_POST['update_p_price'];
+   
    $update_p_image = $_FILES['update_p_image']['name'];
    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
    $update_p_image_folder = 'uploaded_img/'.$update_p_image;
@@ -78,8 +79,8 @@ if(isset($_POST['update_product'])){
    text-align: center;
    background-color: var(--blue);
    color:var(--white);
-   font-size: 1.2rem;
-   padding:1.2rem 3rem;
+   font-size: 1rem;
+   padding:1rem 2rem;
    border-radius: .5rem;
    cursor: pointer;
    margin-top: 1rem;
@@ -113,7 +114,7 @@ if(isset($_POST['update_product'])){
 
 .display-product-table table thead th{
    padding:1.5rem;
-   font-size: 1.5rem;
+   font-size: 1.3rem;
    background-color: var(--black);
    color:var(--white);
 }
@@ -206,7 +207,7 @@ if(isset($_POST['update_product'])){
 
  
    <br>
-   <h1 style="text-align:center">  <i class="fas fa-tasks"></i> Manage Products</h1>
+   <h3 style="text-align:center">  <i class="fas fa-tasks"></i> Manage Products</h3>
    <br>
     
     <div class="container">

@@ -29,7 +29,7 @@ if(isset($_POST['add_to_cart'])){
 <html>
 <head>
   <title>Online Electronic Sales (OES)</title>
-  <link rel="stylesheet" href="Bootstrap/index.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -41,7 +41,8 @@ if(isset($_POST['add_to_cart'])){
 
 
 <style>    
-.filterDiv {
+
+filterDiv {
 float: left;
 /*background-color: #2196F3;
 color: #ffffff;*/
@@ -195,28 +196,23 @@ transition: background-color 0.6s ease;
    width: 100%;
    text-align: center;
 }
-
 .display-product-table table thead th{
    padding:1.5rem;
    font-size: 1.4rem;
    background-color: var(--black);
    color:var(--white);
 }
-
 .display-product-table table td{
    padding:1.5rem;
    font-size: 1.5rem;
    color:var(--black);
 }
-
 .display-product-table table td:first-child{
    padding:10;
 }
-
 .display-product-table table tr:nth-child(even){
    background-color: var(--bg-color);
 }
-
 .display-product-table .empty{
    margin-bottom: 2rem;
    text-align: center;
@@ -229,17 +225,11 @@ transition: background-color 0.6s ease;
 /*.display-product-table{
       overflow-x: scroll;
    }
-
    .display-product-table table{
       width: 0rem;
    }*/
 
 
-.container2{
-  
-   margin:0 auto;
-/*    padding-bottom: 5rem; */
-}
 
 section{
    padding:2rem;
@@ -376,205 +366,6 @@ section{
 <br>
 
 
-<center>
-<h2>Featured <b>Products</b></h2>
- <hr width="15%" color="red"  size="5px" />
-</center>
-
-
-<div id="myBtnContainer" style="text-align:center">
-    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-    <button class="btn active" onclick="filterSelection('Phone')"> Phone </button>
-    <button class="btn active" onclick="filterSelection('laptop')"> Laptop </button>
-    <button class="btn active" onclick="filterSelection('earphone')"> Earphone </button>
-    <button class="btn active" onclick="filterSelection('watch')"> Smart Watch </button>
-</div>
-
-<br>
-
-
-<div class="row" >
-  <div class="column">
-      
-    <div class="filterDiv Phone">
-        <div class="card">
-          <img src="Image/Iphoe13.jpg" style=" width: 290px; height: 290px;">
-          <h3>Iphone 13</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-
-         <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
-        </div>
-  </div>
-      
-  </div>
-
-  <div class="column">
-     <div class="filterDiv Phone">
-        <div class="card">
-          <img src="Image/Iphone11.jpg"  style=" width: 300px; height: 295px;" >
-          <h3>Iphone 11</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-          <button type="button" class="btn bg-cart" onclick="document.location='Product2.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
-        </div>
-     </div>
-  </div>
-  
-  <div class="column">
-     <div class="filterDiv Phone">
-        <div class="card">
-          <img src="Image/Iphone13pro.jpg" style=" width: 300px; height: 295px;"  >
-          <h3>Iphone 13 pro max</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-          <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
-        </div>
-     </div>  
-  </div>
-    
-   
-   <div class="column">
-       <div class="filterDiv Phone">  
-            <div class="card">
-              <img src="Image/samsungs22.png"  style=" width: 300px; height: 295px;" >
-              <h3>SamSung S22</h3>
-             <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-              <div>
-                <i class="fa fa-star star"></i>
-                <i class="fa fa-star star"></i>
-                <i class="fa fa-star star"></i>
-                <i class="fa fa-star star"></i>
-                <i class="fa fa-star star"></i>
-             </div>
-             <div class="text-muted mb-3">34 reviews</div>
-             <button type="button" class="btn bg-cart" onclick="document.location='Product1.php'"><i class="fa fa-eye" mr-2"></i> Details </button>
-            </div>
-        </div>  
-  </div> 
-  
-</div>
-
-
-<br>
-<br>
-<br>
-    
-
-<div class="row" >
-  <div class="column">
-    <div class="filterDiv earphone">  
-        <div class="card">
-          <img src="Image/airpods.png" style=" width: 300px; height: 250px;" >
-          <h3>Apple Airpods Pro</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-        </div>
-    </div>  
-  </div>
-
-    
-  <div class="column">
-      <div class="filterDiv laptop">   
-        <div class="card">
-          <img src="Image/Asus.png" style=" width: 300px; height: 250px;" >
-          <h3>Zenbook 14 UX425</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-          <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-        </div>
-    </div> 
-    
-  </div>
-  
-  <div class="column">
-    <div class="filterDiv laptop">  
-        <div class="card">
-          <img src="Image/surfacelaptopgo.png"  style=" width: 300px; height: 220px;" >
-          <h3>Microsoft Surface Laptop Go</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-        </div>
-    </div> 
-  </div>
-    
-  <div class="column">
-     <div class="filterDiv watch">  
-        <div class="card">
-          <img src="Image/series3.png"  style=" width: 300px; height: 250px;" >
-          <h3>Apple Watch Series 3</h3>
-          <h5 class="mb-0 font-weight-semibold">RM3899</h5>
-          <div>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-            <i class="fa fa-star star"></i>
-         </div>
-         <div class="text-muted mb-3">34 reviews</div>
-         <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-        </div>
-    </div> 
-  </div>
-  
-</div>
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 <center>
 <h2>Latest Products <b>Arivals</b></h2>
@@ -582,38 +373,22 @@ section{
 </center>
 
 
-    <div class="container2">
+    
 
-        <section class="products">
+    <div class="container2" >
 
+        <section class="products" >
 
-           <div class="box-container" >
-
-              <?php
-
-              $select_products = mysqli_query($con, "SELECT * FROM `products`");
-              if(mysqli_num_rows($select_products) > 0){
-                 while($fetch_product = mysqli_fetch_assoc($select_products)){
-              ?>
-
-              <form action="" method="post">
-                 <div class="box"  style= "background-color: #fefbd8;">
-                    <img src="Admin/uploaded_img/<?php echo $fetch_product['image']; ?>"  style=" width: 290px; height: 290px;">
-                    <h3><?php echo $fetch_product['name']; ?></h3>
-                    <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
-                    <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
-                    <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-                    <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-<!--                  <input type="submit" class="btn" value="add to cart" name="add_to_cart" style= "background: yellow;" >-->
-                 <a href="product.php?id=<?php echo  $fetch_product['id']; ?>" type="button" input type="submit" class="btn bg-cart" style= "background: yellow;"  name="add_to_cart"><i class="fa fa-eye mr-2"></i> View Details</a>
+           <div class="box-container" id="zc">
+            
+              <form action="" method="post" >
+                  
+                 <div class="box"  style= "background-color: #fefbd8;" >
+                    
                  </div>
+              
               </form>
-
-              <?php
-                 };
-              };
-              ?>
-
+             
            </div>
 
         </section>
@@ -621,6 +396,10 @@ section{
     </div>
 
 
+
+
+
+   <script src='product.js'></script>   
 <br>
 <br>
 <br>
